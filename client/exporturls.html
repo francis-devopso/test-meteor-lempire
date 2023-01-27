@@ -1,0 +1,14 @@
+<template name="exporturls">
+  <div>{{#each exporturls}} {{> urlitem}} {{/each}}</div>
+  {{#if isLoading}}
+  <div class="loading">loading...</div>
+  {{/if}}
+</template>
+
+<template name="urlitem">
+  <div style="margin: 5px">
+    {{#if (progressNot100p progress) }}
+    <span class="exportItem" style="width: {{double progress}}px;"></span>
+    {{progress}}% {{else}} <button>X</button> {{url}} {{/if}}
+  </div>
+</template>
